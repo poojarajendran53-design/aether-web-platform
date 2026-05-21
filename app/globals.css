@@ -1,0 +1,180 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: oklch(0.98 0.01 90);
+  --foreground: oklch(0.15 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.15 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.15 0 0);
+  --primary: oklch(0.7 0.25 330);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.65 0.2 250);
+  --secondary-foreground: oklch(1 0 0);
+  --muted: oklch(0.95 0.01 90);
+  --muted-foreground: oklch(0.45 0 0);
+  --accent: oklch(0.9 0.2 100);
+  --accent-foreground: oklch(0.15 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.85 0.02 330);
+  --input: oklch(0.92 0 0);
+  --ring: oklch(0.7 0.25 330);
+  --chart-1: oklch(0.7 0.25 330);
+  --chart-2: oklch(0.65 0.2 250);
+  --chart-3: oklch(0.9 0.2 100);
+  --chart-4: oklch(0.75 0.15 300);
+  --chart-5: oklch(0.8 0.2 140);
+  --radius: 1rem;
+  
+  /* AETHER Custom Colors */
+  --hot-pink: oklch(0.7 0.25 330);
+  --electric-blue: oklch(0.65 0.2 250);
+  --neon-yellow: oklch(0.95 0.2 100);
+  --lavender: oklch(0.8 0.12 300);
+  --lime-green: oklch(0.85 0.22 140);
+  --cream: oklch(0.97 0.02 90);
+  --bright-orange: oklch(0.75 0.2 50);
+}
+
+@theme inline {
+  --font-sans: 'Space Grotesk', 'Space Grotesk Fallback', sans-serif;
+  --font-mono: 'Space Mono', 'Space Mono Fallback', monospace;
+  --font-display: 'Outfit', 'Outfit Fallback', sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  
+  /* AETHER Custom Colors in Theme */
+  --color-hot-pink: var(--hot-pink);
+  --color-electric-blue: var(--electric-blue);
+  --color-neon-yellow: var(--neon-yellow);
+  --color-lavender: var(--lavender);
+  --color-lime-green: var(--lime-green);
+  --color-cream: var(--cream);
+  --color-bright-orange: var(--bright-orange);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-gradient-pink-blue {
+    background: linear-gradient(135deg, var(--hot-pink) 0%, var(--electric-blue) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .text-gradient-rainbow {
+    background: linear-gradient(135deg, var(--hot-pink) 0%, var(--bright-orange) 25%, var(--neon-yellow) 50%, var(--lime-green) 75%, var(--electric-blue) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .bg-gradient-aether {
+    background: linear-gradient(135deg, var(--hot-pink) 0%, var(--lavender) 50%, var(--electric-blue) 100%);
+  }
+  
+  .bg-gradient-sunset {
+    background: linear-gradient(135deg, var(--hot-pink) 0%, var(--bright-orange) 50%, var(--neon-yellow) 100%);
+  }
+  
+  .bg-gradient-cyber {
+    background: linear-gradient(135deg, var(--electric-blue) 0%, var(--lavender) 50%, var(--hot-pink) 100%);
+  }
+  
+  .bg-gradient-nature {
+    background: linear-gradient(135deg, var(--lime-green) 0%, var(--neon-yellow) 100%);
+  }
+  
+  .glow-pink {
+    box-shadow: 0 0 40px oklch(0.7 0.25 330 / 0.4);
+  }
+  
+  .glow-blue {
+    box-shadow: 0 0 40px oklch(0.65 0.2 250 / 0.4);
+  }
+  
+  .glow-yellow {
+    box-shadow: 0 0 40px oklch(0.95 0.2 100 / 0.4);
+  }
+  
+  .noise-overlay {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+  }
+  
+  .pixel-border {
+    border: 3px solid currentColor;
+    box-shadow: 
+      3px 3px 0 currentColor,
+      -1px -1px 0 currentColor;
+  }
+  
+  .sticker-shadow {
+    filter: drop-shadow(4px 4px 0 oklch(0.15 0 0 / 0.2));
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--hot-pink), var(--electric-blue));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--electric-blue), var(--hot-pink));
+}
+
+/* Selection styles */
+::selection {
+  background: var(--hot-pink);
+  color: white;
+}
